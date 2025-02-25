@@ -16,14 +16,13 @@ main {
     width: 100%;
     min-height: 100vh;
     display: flex;
-
     justify-content: center;
     align-items: center;
 }
 
 .form {
-    width: 70%;
-    height: 90vh;
+    width: 60%;
+    height: 95vh;
     background-color: white;
     border-radius: 35px;
     display: flex;
@@ -33,12 +32,11 @@ main {
 }
 
 .sign {
-    /* border: 1px black solid;*/
     width: 50%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 3%;
+    gap: 2.5%;
 }
 
 .sign h1 {
@@ -58,9 +56,7 @@ i {
 
 ul {
     list-style-type: none;
-
 }
-
 
 .sign input {
     align-self: center;
@@ -68,7 +64,11 @@ ul {
     height: 7%;
     border-radius: 5px;
     border: gray 0.5px solid;
+    padding-left: 10px; /* Added padding for better text alignment */
+    transition: border-color 0.3s ease; /* Smooth transition when the border changes */
 }
+
+
 
 .sign button {
     align-self: center;
@@ -78,17 +78,23 @@ ul {
     background-color: rgb(33, 2, 58);
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.pic {
+.sign button:hover {
+    background-color: rgb(50, 3, 85); /* Darken the button color on hover */
+}
 
+
+ 
+  
+.pic {
     width: 50%;
     height: 100%;
     background-image: url(assets/images/illustration-sign-up-desktop.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -96,7 +102,7 @@ ul {
         width: 100%;
         height: 150vh;
         flex-direction: column-reverse;
-
+        border-radius: 0;
     }
 
     .pic {
@@ -112,4 +118,15 @@ ul {
         height: auto;
     }
 
+    .sign input {
+        width: 70%;
+        height: 10vh; 
+        margin-bottom: 5%;
+    }
+
+    .sign button {
+        align-self: center;
+        width: 70%;
+        height: 10vh;
+    }
 }

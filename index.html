@@ -6,10 +6,10 @@
   <!-- Font Awesome CDN link -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
+  <title>Stay updated!</title>
 </head>
 <body>
-  <form>
+  <form onsubmit="validateEmail(); return false;">
     <main>
       <!--form-->
       <div class="form">
@@ -23,18 +23,35 @@
             <li><i class="fa-solid fa-circle-check"></i> And much more!</li>
           </ul>
           <p>Email address </p>
-          <input class="error" type="email" placeholder="email@company.com" required>
-          
+          <input id="email" type="email" placeholder="email@company.com" required>
+          <div id="error-message" style="display: none; color: red;">Invalid email address</div>
           <button type="submit">
             Subscribe to monthly newsletter 
           </button>
-          
         </div>
         <!--pic -->
         <div class="pic"></div>
       </div>
     </main>
   </form>
-  <script src="script.js"></script>
+  <script>
+    function validateEmail() {
+      const emailInput = document.getElementById('email');
+      const errorMessage = document.getElementById('error-message');
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      // Reset previous error
+      emailInput.classList.remove('error');
+      errorMessage.style.display = 'none';
+
+      // Validate email
+      if (!emailRegex.test(emailInput.value)) {
+        emailInput.classList.add('error');
+        errorMessage.style.display = 'block';
+      } else {
+        window.location.href = 'thank.html';
+      }
+    }
+  </script>
 </body>
 </html>

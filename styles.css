@@ -129,4 +129,37 @@ ul {
         width: 70%;
         height: 10vh;
     }
+ 
+}
+/*-----------------------------------------------------------*/
+.thank{
+    width: 25%;
+    height: 55vh;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    color: rgb(21, 6, 59);
+}
+
+.thank button{
+    align-self: center;
+    width: 80%;
+    background-color: rgb(21, 6, 59);
+    border: none;
+    border-radius: 5px;
+    height: 10%;
+    color: white;
+}
+@media screen and (max-width: 768px) {
+  .thank{
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  } 
+  .thank button{
+    margin-top: 40%;
+  } 
 }
